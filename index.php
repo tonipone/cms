@@ -16,4 +16,4 @@ require_once(ROOT . DS . 'core' . DS . 'bootstrap.php');
 
 
 ?>
-<h1>Index</h1>
+

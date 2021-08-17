@@ -10,6 +10,6 @@ define('DEBUG', true);
 define('DEFAULT_CONTROLLER','Home'); // default controller if there isn't one defined
 define('DEFAULT_LAYOUT', 'default');
 
-// define('PROOT', '/');
+define('PROOT', '/');
 
 define('SITE_TITLE', 'A.P. MVC Framework');

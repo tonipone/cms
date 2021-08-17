@@ -18,7 +18,7 @@ class View {
 		$viewString = implode(DS,$viewAry);
 		if(file_exists(ROOT . DS . 'app' . DS . 'views' . DS . $viewString . '.php')){
 			include(ROOT . DS . 'app' . DS . 'views' . DS . $viewString . '.php');
-			//include(ROOT . DS . 'app' . DS . 'views' . 'layouts' . DS . $this->_layout . '.php');
+			include(ROOT . DS . 'app' . DS . 'views' . DS . 'layouts' . DS . $this->_layout . '.php');
 		} else {
 			die('The View \"' . $viewName . '\" does not exist.');
 		}
