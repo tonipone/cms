@@ -23,6 +23,7 @@ function autoload($classname){
 	    require_once (ROOT . DS . 'app' . DS . 'models' . DS . $classname . '.php');
     }
 }
+
 spl_autoload_register('autoload');
 session_start();
 
