@@ -27,7 +27,7 @@ class DB {
 			$x=1;
 			if(count($params)){
 				foreach ($params as $param){
-					$this->_query->bindValue($x,$params);
+					$this->_query->bindValue($x,$param);
 					$x++;
 				}
 			}
@@ -42,6 +42,33 @@ class DB {
 		}
 
 		return $this;
+	}
+
+	public function insert($table,$fields=[]){
+		$fieldString = '';
+		$valueString = '';
+		$values = [];
+
+		foreach ($fields as $field => $value){
+			$fieldString .= '`'. $field . '`,';
+			$valueString .= '?,';
+			$values[] = $value;
+		}
+		$fieldString = rtrim($fieldString,',');
+		$valueString = rtrim($valueString,',');
+
+		$sql = "INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
+		//dnd($sql);
+
+		if(!$this->query($sql,$values)->error()){
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public function error(){
+		return $this->_error;
 	}
 }
 

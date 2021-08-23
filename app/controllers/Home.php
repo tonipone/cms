@@ -15,9 +15,15 @@ class Home extends Controller {
 
 	public function indexAction(){
 		$db = DB::getInstance();
-		$sql = "SELECT * FROM contacts";
-		$contactsQ = $db->query($sql);
-		dnd($contactsQ);
+		$fields = [
+			'fname' => 'Toni',
+			'lname' => 'De Giovanni',
+			'email' => 'toni@pop.com'
+		];
+		$contactsR = $db->insert('contacts',$fields);
+		//$sql = "SELECT * FROM contacts";
+		//$contactsQ = $db->query($sql);
+		//dnd($contactsQ);
 		$this->view->render('home/index');
 	}
 }
