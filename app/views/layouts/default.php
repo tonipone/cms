@@ -11,8 +11,13 @@
 	<?= $this->content('head'); ?>
 </head>
 <body>
+    <div class="container">
+        <div class="row justify-content-md-center">
+	        <?= $this->content('body'); ?>
+        </div>
 
-	<?= $this->content('body'); ?>
+    </div>
+
 
 
 

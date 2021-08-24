@@ -14,15 +14,15 @@ class Home extends Controller {
 	}
 
 	public function indexAction(){
-		$db = DB::getInstance();
-
-		$contacts = $db->find('contacts',[
+		//$db = DB::getInstance();
+		/*$contacts = $db->find('contacts',[
 			'conditions' => ['fname = ?','lname = ?'],
 			'bind' => ['Pasquale','Esposito'],
 			'order' => "lname, fname",
 			'limit' => 1
 		]);
-		dnd($contacts);
+		dnd($contacts);*/
+
 		$this->view->render('home/index');
 	}
 }
