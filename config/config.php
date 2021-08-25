@@ -18,3 +18,7 @@ define('DEFAULT_LAYOUT', 'default');
 define('PROOT', '/');
 
 define('SITE_TITLE', 'A.P. MVC Framework');
+
+define('CURRENT_USER_SESSION_NAME', 'khhytgjgdsakREDFC');
+define('REMEMBER_ME_COOKIE_NAME', 'JAFRDGTHU777733');
+define('REMEMBER_ME_COOKIE_EXPIRY', 604800);
