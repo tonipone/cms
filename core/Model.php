@@ -19,7 +19,9 @@ class Model {
 
 	protected function _setTableColumns(){
 		$columns = $this->get_columns();
+		//dnd($columns);
 		foreach ( $columns as $column ) {
+			$columnName = $column->Field;
 			$this->_columnsNames[] = $column->Field;
 			$this->{$columnName} = null;
 		}
@@ -43,9 +45,10 @@ class Model {
 	}
 
 	public function findFirst($params = []){
-		$resultQuery = $this->_db->findFirst($this->_table, $params);
+		$resultQuery = $this->_db->findFirst($this->_table, $params);		;
 		$result = new $this->_modelName($this->_table);
 		$result->populateObjData($resultQuery);
+		//dnd($result);
 		return $result;
 	}
 
@@ -113,8 +116,9 @@ class Model {
 	}
 
 	protected function populateObjData($result){
+		//dnd($result);
 		foreach ($result as $key => $val ) {
-			$this->key = $val;
+			$this->$key = $val;
 		}
 	}
 

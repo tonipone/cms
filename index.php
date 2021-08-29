@@ -17,9 +17,9 @@ require_once (ROOT . DS . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'functions.
 function autoload($classname){
     if(file_exists(ROOT . DS . 'core' . DS . $classname . '.php')) {
         require_once (ROOT . DS . 'core' . DS . $classname . '.php');
-    }elseif (ROOT . DS . 'app' . DS . 'controllers' . DS . $classname . '.php'){
+    }elseif (file_exists(ROOT . DS . 'app' . DS . 'controllers' . DS . $classname . '.php')){
         require_once (ROOT . DS . 'app' . DS . 'controllers' . DS . $classname . '.php');
-    }elseif (ROOT . DS . 'app' . DS . 'models' . DS . $classname . '.php'){
+    }elseif (file_exists(ROOT . DS . 'app' . DS . 'models' . DS . $classname . '.php')){
 	    require_once (ROOT . DS . 'app' . DS . 'models' . DS . $classname . '.php');
     }
 }
@@ -31,7 +31,7 @@ $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'],'
 //$db = DB::getInstance();
 // dnd($db);
 //Route the request
-//var_dump($url);
+
 Router::route($url);
 
 //echo $_SERVER['PATH_INFO'];
