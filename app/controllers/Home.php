@@ -22,6 +22,7 @@ class Home extends Controller {
 			'limit' => 1
 		]);
 		dnd($contacts);*/
+		//dnd($_SESSION);
 
 		$this->view->render('home/index');
 	}
