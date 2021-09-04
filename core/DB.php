@@ -107,6 +107,7 @@ class DB {
 	}
 
 	public function insert($table,$fields=[]){
+
 		$fieldString = '';
 		$valueString = '';
 		$values = [];
@@ -119,8 +120,9 @@ class DB {
 		$fieldString = rtrim($fieldString,',');
 		$valueString = rtrim($valueString,',');
 
+
 		$sql = "INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
-		//dnd($sql);
+
 
 		if(!$this->query($sql,$values)->error()){
 			return true;
