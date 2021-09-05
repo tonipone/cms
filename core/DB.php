@@ -122,7 +122,7 @@ class DB {
 
 
 		$sql = "INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
-
+		//dnd($this->query($sql,$values));
 
 		if(!$this->query($sql,$values)->error()){
 			return true;

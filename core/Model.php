@@ -73,6 +73,7 @@ class Model {
 
 	public function insert($fields){
 		if(empty($fields)) return false;
+
 		return $this->_db->insert($this->_table, $fields);
 	}
 

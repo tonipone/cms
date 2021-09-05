@@ -30,9 +30,9 @@ session_start();
 $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'],'/')) : [];
 //$db = DB::getInstance();
 //dnd($url);
-//Route the request
-
+//Route the requestdnd(Session::exists(CURRENT_USER_SESSION_NAME));
 if(!Session::exists(CURRENT_USER_SESSION_NAME) && Cookie::exists(REMEMBER_ME_COOKIE_NAME)){
+
     Users::loginUserFromCookie();
 }
 Router::route($url);
